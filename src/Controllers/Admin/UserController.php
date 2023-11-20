@@ -19,10 +19,11 @@ class UserController extends Controller
     public function create() {
         if (isset($_POST['btn-submit'])) { 
             $data = [
-                'name' => $_POST['name'],
+                'username' => $_POST['name'],
                 'address' => $_POST['address'],
                 'email' => $_POST['email'],
                 'password' => $_POST['password'],
+                'phone' => $_POST['phone'],
             ];
 
             (new User)->insert($data);
@@ -36,10 +37,11 @@ class UserController extends Controller
     public function update() {
         if (isset($_POST['btn-submit'])) { 
             $data = [
-                'name' => $_POST['name'],
+                'username' => $_POST['name'],
                 'address' => $_POST['address'],
                 'email' => $_POST['email'],
                 'password' => $_POST['password'],
+                'phone' => $_POST['phone'],
             ];
 
             $conditions = [

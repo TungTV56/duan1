@@ -37,13 +37,16 @@
                                 <div class="card-block">
                                     <form action="" method="post">
                                         <label for="name">Name</label>
-                                        <input type="text" name="name" class="form-control" value="<?= $user['name'] ?>">
+                                        <input type="text" name="name" class="form-control" value="<?= $user['username'] ?>">
 
                                         <label for="address" class="mt-3">Email</label>
                                         <input type="email" name="email" class="form-control" value="<?= $user['email'] ?>">
 
                                         <label for="password" class="mt-3">Password</label>
                                         <input type="password" name="password" class="form-control" value="<?= $user['password'] ?>">
+
+                                        <label for="phone" class="mt-3">phone</label>
+                                        <input type="text" name="phone" class="form-control" value="<?= $user['phone'] ?>">
 
                                         <label for="address" class="mt-3">Address</label>
                                         <input type="text" name="address" class="form-control" value="<?= $user['address'] ?>">

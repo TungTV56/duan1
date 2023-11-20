@@ -45,6 +45,9 @@
                                         <label for="password" class="mt-3">Password</label>
                                         <input type="password" name="password" class="form-control">
 
+                                        <label for="phone" class="mt-3">phone</label>
+                                        <input type="text" name="phone" class="form-control">
+
                                         <label for="address" class="mt-3">Address</label>
                                         <input type="text" name="address" class="form-control">
 

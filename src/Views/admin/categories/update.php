@@ -33,10 +33,9 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h1>Cập nhật Category</h1>
-
                                 </div>
                                 <div class="card-block">
-                                <form action="" method="post">
+                                    <form action="" method="post">
                                         <label for="name">Name</label>
                                         <input type="text" name="name" class="form-control" value="<?= $category['name'] ?>">
 

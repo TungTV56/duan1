@@ -33,13 +33,10 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h1>Category List</h1>
-
                                     <a href="/admin/categories/create" class="btn btn-info">Thêm</a>
-
-                                    
                                 </div>
                                 <div class="card-block">
-                                <table class="table">
+                                    <table class="table">
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
@@ -49,7 +46,7 @@
                                         <?php foreach ($categories as $category) : ?>
                                             <tr>
                                                 <td><?= $category['id'] ?></td>
-                                                <td><?= $category['name'] ?></td>   
+                                                <td><?= $category['name'] ?></td>
                                                 <td>
                                                     <a href="/admin/categories/update?id=<?= $category['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
 
@@ -61,15 +58,15 @@
                                         <?php endforeach; ?>
 
                                     </table>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </div>
     </div>
+</div>
 </div>
 </div>

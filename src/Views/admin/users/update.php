@@ -37,7 +37,7 @@
                                 <div class="card-block">
                                     <form action="" method="post">
                                         <label for="name">Name</label>
-                                        <input type="text" name="name" class="form-control" value="<?= $user['name'] ?>">
+                                        <input type="text" name="name" class="form-control" value="<?= $user['username'] ?>">
 
                                         <label for="address" class="mt-3">Email</label>
                                         <input type="email" name="email" class="form-control" value="<?= $user['email'] ?>">
@@ -47,6 +47,9 @@
 
                                         <label for="address" class="mt-3">Address</label>
                                         <input type="text" name="address" class="form-control" value="<?= $user['address'] ?>">
+
+                                        <label for="address" class="mt-3">Role</label>
+                                        <input type="text" name="address" class="form-control" value="<?= $user['Role'] ?>">
 
                                         <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
                                         <a href="/admin/users" class="btn btn-primary mt-3">Quay lại d/s</a>

@@ -46,6 +46,7 @@
                                                     <th>Email</th>
                                                     <th>Address</th>
                                                     <th>Password</th>
+                                                    <th>Role</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -54,10 +55,11 @@
                                                 <?php foreach ($users as $user) : ?>
                                                     <tr>
                                                         <td><?= $user['id'] ?></td>
-                                                        <td><?= $user['name'] ?></td>
+                                                        <td><?= $user['username'] ?></td>
                                                         <td><?= $user['email'] ?></td>
                                                         <td><?= $user['address'] ?></td>
                                                         <td><?= $user['password'] ?></td>
+                                                        <td><?= $user['role'] ?></td>
                                                         <td>
                                                             <a href="/admin/users/update?id=<?= $user['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
 

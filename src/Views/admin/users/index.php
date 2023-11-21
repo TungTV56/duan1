@@ -14,7 +14,7 @@
                 <div class="page-header-breadcrumb">
                     <ul class=" breadcrumb breadcrumb-title">
                         <li class="breadcrumb-item">
-                            <a href="/addmin/dashboard"><i class="feather icon-home"></i></a>
+                            <a href="/admin/dashboard"><i class="feather icon-home"></i></a>
                         </li>
                         <li class="breadcrumb-item"><a href="#!">User</a> </li>
                     </ul>
@@ -43,11 +43,11 @@
                                                 <tr>
                                                     <th>ID</th>
                                                     <th>Name</th>
+                                                    <th>Password</th>
+                                                    <th>phone</th>
                                                     <th>Email</th>
                                                     <th>Address</th>
                                                     <th>Password</th>
-                                                    <th>Phone</th>
-                                                    <th>Role</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -56,12 +56,10 @@
                                                 <?php foreach ($users as $user) : ?>
                                                     <tr>
                                                         <td><?= $user['id'] ?></td>
-                                                        <td><?= $user['username'] ?></td>
+                                                        <td><?= $user['name'] ?></td>
                                                         <td><?= $user['email'] ?></td>
                                                         <td><?= $user['address'] ?></td>
                                                         <td><?= $user['password'] ?></td>
-                                                        <td><?= $user['phone'] ?></td>
-                                                        <td><?= $user['role'] ?></td>
                                                         <td>
                                                             <a href="/admin/users/update?id=<?= $user['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
 

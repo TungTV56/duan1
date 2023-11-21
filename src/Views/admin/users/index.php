@@ -47,7 +47,6 @@
                                                     <th>phone</th>
                                                     <th>Email</th>
                                                     <th>Address</th>
-                                                    <th>Password</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -57,9 +56,10 @@
                                                     <tr>
                                                         <td><?= $user['id'] ?></td>
                                                         <td><?= $user['username'] ?></td>
+                                                        <td><?= $user['password'] ?></td>
+                                                        <td><?= $user['phone'] ?></td>
                                                         <td><?= $user['email'] ?></td>
                                                         <td><?= $user['address'] ?></td>
-                                                        <td><?= $user['password'] ?></td>
                                                         <td>
                                                             <a href="/admin/users/update?id=<?= $user['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
 

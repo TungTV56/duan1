@@ -32,7 +32,7 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h1>Cập nhật Category</h1>
+                                    <h5>Cập nhật Category</h5>
 
                                 </div>
                                 <div class="card-block">

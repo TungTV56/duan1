@@ -32,7 +32,7 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h1>Category List</h1>
+                                    <h5>Category List</h5>
 
                                     <a href="/admin/categories/create" class="btn btn-info">Thêm</a>
 

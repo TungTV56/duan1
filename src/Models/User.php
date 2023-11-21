@@ -12,7 +12,6 @@ class User extends Model {
         'address',
         'password',
         'phone',
-
         'role',
 
     ];

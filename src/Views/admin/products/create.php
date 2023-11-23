@@ -6,7 +6,7 @@
                 <div class="page-header-title">
                     <i class="feather icon-home bg-c-blue"></i>
                     <div class="d-inline">
-                        <h5>Products</h5>
+                        <h5>Product</h5>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                         <li class="breadcrumb-item">
                             <a href="/admin/dashboard"><i class="feather icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">products</a> </li>
+                        <li class="breadcrumb-item"><a href="#!">Product</a> </li>
                     </ul>
                 </div>
             </div>
@@ -32,11 +32,11 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Thêm mới</h5>
+                                    <h5>Thêm mới </h5>
                                 </div>
                                 <div class="card-block">
                                     <form action="" method="post" enctype="multipart/form-data">
-                                        <label for="name">Name</label>
+                                    <label for="name">Name</label>
                                         <input type="text" name="name" class="form-control">
 
                                         <div class="mt-4">
@@ -63,6 +63,7 @@
                                             <label for="description" class="mt-3">Description</label><br>
                                             <textarea name="description" id="" cols="142" rows="5"></textarea>
                                         </div>
+
                                         <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
                                         <a href="/admin/products" class="btn btn-primary mt-3">Quay lại d/s</a>
                                     </form>
@@ -76,4 +77,5 @@
         </div>
     </div>
 </div>
-</div>
+
+

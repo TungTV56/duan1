@@ -51,6 +51,12 @@
                                         <label for="address" class="mt-3">Address</label>
                                         <input type="text" name="address" class="form-control" value="<?= $user['address'] ?>">
 
+                                        <label for="phone" class="mt-3">Phone</label>
+                                        <input type="text" name="phone" class="form-control" value="<?= $user['phone'] ?>">
+
+                                        <label for="role" class="mt-3">Role</label>
+                                        <input type="text" name="role" class="form-control" value="<?= $user['role'] ?>">
+
                                         <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
                                         <a href="/admin/users" class="btn btn-primary mt-3">Quay lại d/s</a>
                                     </form>

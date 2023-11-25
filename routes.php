@@ -10,6 +10,7 @@ use Ductong\BaseMvc\Router;
 $router = new Router();
 
 $router->addRoute('/', HomeController::class, 'index');
+$router->addRoute('/client/home', HomeController::class, 'index');
 
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 $router->addRoute('/admin/master', DashboardController::class, 'index');

@@ -11,6 +11,8 @@ class HomeController extends Controller
         Đây là hàm hiển thị danh sách user
     */
     public function index() {
-        $this->render('home');
+        $products = (new Product())->getLatestLimit10();
+
+        $this->render('home', ['products'=> $products]);
     }
 }

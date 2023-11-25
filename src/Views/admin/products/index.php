@@ -53,13 +53,12 @@
                                             </thead>
                                             <tbody>
                                                 <?php foreach ($products as $product) {
-                                                    $hinhpath = "../../../../upload/" . $product['image'];
                                                 ?>
                                                     <tr>
                                                         <td><?= $product['id'] ?></td>
                                                         <td><?= $product['name'] ?></td>
                                                         <td>$<?= number_format($product['price'], 0, ',', '.') ?></td>
-                                                        <td><img src="<?= $hinhpath ?>" alt="" width="100px" height="100px"></td>
+                                                        <td><img src="<?= $product['image'] ?>" alt="" width="100px"></td>
                                                         <td><?= $product['description'] ?></td>
                                                         <td><?= $product['view'] ?></td>
                                                         <td>

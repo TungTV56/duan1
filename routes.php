@@ -6,6 +6,7 @@ use Ductong\BaseMvc\Controllers\Admin\DashboardController;
 use Ductong\BaseMvc\Controllers\Admin\ProductController;
 use Ductong\BaseMvc\Controllers\Client\CartController;
 use Ductong\BaseMvc\Controllers\Client\HomeController;
+use Ductong\BaseMvc\Controllers\Client\ProDetailController;
 use Ductong\BaseMvc\Controllers\Client\ProductsController;
 use Ductong\BaseMvc\Router;
 
@@ -15,6 +16,7 @@ $router->addRoute('/', HomeController::class, 'index');
 $router->addRoute('/client/home', HomeController::class, 'index');
 $router->addRoute('/client/products', ProductsController::class, 'index');
 $router->addRoute('/client/cart', CartController::class, 'index');
+$router->addRoute('/client/product-detail', ProDetailController::class, 'index');
 
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 $router->addRoute('/admin/master', DashboardController::class, 'index');

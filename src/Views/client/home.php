@@ -217,7 +217,7 @@
                         <h2 class="product-wid-title">Top Sellers</h2>
                         <a href="" class="wid-view-more">View All</a>
                         <div class="single-wid-product">
-                            <a href="single-product.html"><img src="ustora/ustora/img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
+                            <a href="single-product.html"><img src="ustora/img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
                             <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>
                             <div class="product-wid-rating">
                                 <i class="fa fa-star"></i>

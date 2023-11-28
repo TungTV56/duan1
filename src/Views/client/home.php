@@ -86,18 +86,18 @@
                     <div class="product-carousel">
                         <?php
                         foreach ($products as $product) {
+                            $link = "/client/product-detail?idsp=" . $product["p_id"];
                         ?>
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="<?= $product['p_image'] ?>" alt="">
+                                    <img  src="<?= $product['p_image'] ?>" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to
                                             cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
 
-                                <h2><a href="single-product.html"><?= $product['p_name'] ?></a></h2>
+                                <h2><a href="<?= $link ?>"><?= $product['p_name'] ?></a></h2>
 
                                 <div class="product-carousel-price">
                                     <ins>$<?= $product['p_price'] ?></ins> <del>$100.00</del>

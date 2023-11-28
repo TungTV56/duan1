@@ -17,6 +17,7 @@ class Product extends Model {
     public function getLatestLimit10() {
         $sql = "
             SELECT 
+                p.id p_id,
                 p.name p_name,
                 p.price p_price,
                 p.image p_image,
@@ -58,6 +59,18 @@ class Product extends Model {
         $stmt = $this->conn->prepare($sql);
 
         $stmt->bindParam(':categoryID', $categoryID);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetchAll();
+    } 
+
+    function getSpCungloai($id, $id_categorie) {
+        $sql = "SELECT * from products where id_category = $id_categorie and id <> $id";
+
+        $stmt = $this->conn->prepare($sql);
 
         $stmt->execute();
 

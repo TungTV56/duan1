@@ -90,7 +90,7 @@
                         ?>
                             <div class="single-product">
                                 <div class="product-f-image">
-                                    <img src="<?= $product['p_image'] ?>" alt="">
+                                    <img  src="<?= $product['p_image'] ?>" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to
                                             cart</a>

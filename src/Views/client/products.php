@@ -17,7 +17,7 @@
         <div class="row">
             <?php
             foreach ($products as $product) {
-                $linksp = "/client/product-deltai?idsp=".$product['id'];
+                $linksp = "/client/product-detail?idsp=".$product['id'];
                 ?>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">

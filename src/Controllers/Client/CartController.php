@@ -11,6 +11,11 @@ class  CartController extends Controller
         Đây là hàm hiển thị danh sách user
     */
     public function index() {
-        $this->render('cart');
+        if($_GET['idsp'] && $_GET['idsp'] > 0) {
+            $idsp = $_GET['idsp'];
+            $product = (new Product())->findOne($idsp);
+        }
+
+        $this->render('cart', ['product'=> $product]);
     }
 }

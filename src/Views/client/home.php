@@ -87,12 +87,13 @@
                         <?php
                         foreach ($products as $product) {
                             $link = "/client/product-detail?idsp=" . $product["p_id"];
+                            $linkCart = "/client/cart?idsp=" . $product["p_id"];
                         ?>
                             <div class="single-product">
                                 <div class="product-f-image">
                                     <img  src="<?= $product['p_image'] ?>" alt="">
                                     <div class="product-hover">
-                                        <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to
+                                        <a href="<?= $linkCart ?>" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to
                                             cart</a>
                                     </div>
                                 </div>

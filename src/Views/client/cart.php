@@ -23,12 +23,12 @@
                                 <table cellspacing="0" class="shop_table cart">
                                     <thead>
                                         <tr>
-                                            <th class="product-remove">&nbsp;</th>
-                                            <th class="product-thumbnail">&nbsp;</th>
-                                            <th class="product-name">Product</th>
-                                            <th class="product-price">Price</th>
-                                            <th class="product-quantity">Quantity</th>
-                                            <th class="product-subtotal">Total</th>
+                                            <th class="product-remove">Thao tác</th>
+                                            <th class="product-thumbnail">Hình ảnh</th>
+                                            <th class="product-name">Sản phẩm</th>
+                                            <th class="product-price">Giá</th>
+                                            <th class="product-quantity">Số lượng</th>
+                                            <th class="product-subtotal">Tổng tiền</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -38,15 +38,15 @@
                                             </td>
 
                                             <td class="product-thumbnail">
-                                                <a href="single-product.html"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="/ustora/img/product-thumb-2.jpg"></a>
+                                                <a href="/client/product-detail?idsp=<?= $product['id'] ?>"><img width="145" height="145" alt="poster_1_up" class="shop_thumbnail" src="<?= $product['image'] ?>"></a>
                                             </td>
 
                                             <td class="product-name">
-                                                <a href="single-product.html">Ship Your Idea</a> 
+                                                <a href="/client/product-detail?idsp=<?= $product['id'] ?>"><?= $product['name'] ?></a> 
                                             </td>
 
                                             <td class="product-price">
-                                                <span class="amount">£15.00</span> 
+                                                <span class="amount"><?= $product['price'] ?></span> 
                                             </td>
 
                                             <td class="product-quantity">

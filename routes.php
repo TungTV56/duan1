@@ -4,12 +4,14 @@ use Ductong\BaseMvc\Controllers\Admin\UserController;
 use Ductong\BaseMvc\Controllers\Admin\CategoryController;
 use Ductong\BaseMvc\Controllers\Admin\DashboardController;
 use Ductong\BaseMvc\Controllers\Admin\ProductController;
+use Ductong\BaseMvc\Controllers\Admin\ViewCartAdminController;
 use Ductong\BaseMvc\Controllers\Client\CartController;
 use Ductong\BaseMvc\Controllers\Client\HomeController;
 use Ductong\BaseMvc\Controllers\Client\LogInController;
 use Ductong\BaseMvc\Controllers\Client\OrderController;
 use Ductong\BaseMvc\Controllers\Client\ProDetailController;
 use Ductong\BaseMvc\Controllers\Client\ProductsController;
+use Ductong\BaseMvc\Controllers\Client\ShowOrderUserController;
 use Ductong\BaseMvc\Controllers\Client\SignUpController;
 use Ductong\BaseMvc\Router;
 
@@ -23,6 +25,9 @@ $router->addRoute('/client/cart', CartController::class, 'showCart');
 $router->addRoute('/deleteCart', CartController::class, 'deleteCart');
 
 $router->addRoute('/client/order', OrderController::class, 'showOrder');
+$router->addRoute('/order', OrderController::class, 'order');
+
+$router->addRoute('/client/showorder', ShowOrderUserController::class, 'showOrderUser');
 
 $router->addRoute('/client/product-detail', ProDetailController::class, 'index');
 $router->addRoute('/client/login', LogInController::class, 'index');
@@ -30,6 +35,7 @@ $router->addRoute('/client/signup', SignUpController::class, 'index');
 
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 $router->addRoute('/admin/master', DashboardController::class, 'index');
+$router->addRoute('/admin/carts', ViewCartAdminController::class, 'index');
 
 $router->addRoute('/admin/users', UserController::class, 'index');
 $router->addRoute('/admin/users/create', UserController::class, 'create');
@@ -45,3 +51,6 @@ $router->addRoute('/admin/products', ProductController::class, 'index');
 $router->addRoute('/admin/products/create', ProductController::class, 'create');
 $router->addRoute('/admin/products/update', ProductController::class, 'update');
 $router->addRoute('/admin/products/delete', ProductController::class, 'delete');
+
+
+

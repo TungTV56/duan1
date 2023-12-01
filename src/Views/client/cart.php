@@ -33,10 +33,10 @@
                                 <tbody>
                                     <?php
                                     $i = 0;
-                                    $total_amounts = 0;
+                                    $total_order = 0;
                                     foreach ($cartPro as $item) {
                                         $total_amount = $item['price'] * $item['quantity'];
-                                        $total_amounts += $total_amount;
+                                        $total_order += $total_amount;
                                     ?>
                                         <tr class="cart_item">
                                             <td>
@@ -128,7 +128,7 @@
                                     <tbody>
                                         <tr class="cart-subtotal">
                                             <th>Tổng tiền</th>
-                                            <td><span class="amount">$ <?= $total_amounts ?></span></td>
+                                            <td><span class="amount">$ <?= $total_order ?></span></td>
                                         </tr>
 
                                         <tr class="shipping">

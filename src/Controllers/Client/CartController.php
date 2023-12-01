@@ -7,9 +7,6 @@ use Ductong\BaseMvc\Models\Product;
 
 class  CartController extends Controller
 {
-    /*
-        Đây là hàm hiển thị danh sách user
-    */
     public function index() {
         if($_GET['idsp'] && $_GET['idsp'] > 0) {
             $idsp = $_GET['idsp'];

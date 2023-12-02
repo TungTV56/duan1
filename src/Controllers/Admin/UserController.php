@@ -47,7 +47,6 @@ class UserController extends Controller
                 'password' => $_POST['password'],
                 'phone' => $_POST['phone'],
                 'role' => $_POST['role'],
-
             ];
 
             $conditions = [

@@ -10,6 +10,10 @@ class UserController extends Controller
     /*
         Đây là hàm hiển thị danh sách user
     */
+    public function __construct() {
+        check_auth();
+    }
+
     public function index() {
         $users = (new User)->all();
         
@@ -42,6 +46,8 @@ class UserController extends Controller
                 'email' => $_POST['email'],
                 'password' => $_POST['password'],
                 'phone' => $_POST['phone'],
+                'role' => $_POST['role'],
+
             ];
 
             $conditions = [

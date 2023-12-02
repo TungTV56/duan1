@@ -12,7 +12,29 @@ class User extends Model {
         'address',
         'password',
         'phone',
-        'role',
-
     ];
+    public function getUserByEmailPassword($username, $password)
+    {
+        $sql = "
+            SELECT 
+                * 
+            FROM {$this->table} 
+            WHERE 
+                username = :username 
+                AND 
+                password = :password 
+            LIMIT 1
+        ";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetch();
+    }
 }

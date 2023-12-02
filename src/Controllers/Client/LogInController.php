@@ -3,7 +3,7 @@
 namespace Ductong\BaseMvc\Controllers\Client;
 
 use Ductong\BaseMvc\Controller;
-use Ductong\BaseMvc\Models\Product;
+use Ductong\BaseMvc\Models\User;
 
 class  LogInController extends Controller
 {
@@ -12,5 +12,21 @@ class  LogInController extends Controller
     */
     public function index() {
         $this->render('login');
+    }
+    public function handleLogin() {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $user = (new User)->getUserByEmailPassword($username, $password);
+
+        $_SESSION['user'] = $user;
+
+        if ($user['role']) {
+            header('Location: /admin/dashboard');
+            exit();
+        }
+
+        header('Location: /');
+        exit();
     }
 }

@@ -13,11 +13,14 @@ use Ductong\BaseMvc\Controllers\Client\ProDetailController;
 use Ductong\BaseMvc\Controllers\Client\ProductsController;
 use Ductong\BaseMvc\Controllers\Client\ShowOrderUserController;
 use Ductong\BaseMvc\Controllers\Client\SignUpController;
+use Ductong\BaseMvc\Controllers\Client\LogoutController;
+
 use Ductong\BaseMvc\Router;
 
 $router = new Router();
 
 $router->addRoute('/', HomeController::class, 'index');
+
 $router->addRoute('/client/home', HomeController::class, 'index');
 $router->addRoute('/client/products', ProductsController::class, 'index');
 
@@ -31,7 +34,9 @@ $router->addRoute('/client/showorder', ShowOrderUserController::class, 'showOrde
 
 $router->addRoute('/client/product-detail', ProDetailController::class, 'index');
 $router->addRoute('/client/login', LogInController::class, 'index');
+$router->addRoute('/handleLogin', LoginController::class, 'handleLogin');
 $router->addRoute('/client/signup', SignUpController::class, 'index');
+$router->addRoute('/logout', LogoutController::class, 'logout');
 
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 $router->addRoute('/admin/master', DashboardController::class, 'index');

@@ -10,7 +10,7 @@ const DB_PASSWORD = '';
 if (!function_exists('check_auth')) {
     function check_auth() {
         if (empty($_SESSION['user'])) {
-            header('Location: /login');
+            header('Location: /client/login');
             exit();
         }
     }

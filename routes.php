@@ -32,7 +32,7 @@ $router->addRoute('/client/showorder', ShowOrderUserController::class, 'showOrde
 $router->addRoute('/client/product-detail', ProDetailController::class, 'index');
 $router->addRoute('/client/login', LogInController::class, 'index');
 $router->addRoute('/client/signup', SignUpController::class, 'index');
-$router->addRoute('/client/order',  OrderController::class, 'index');
+
 
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 $router->addRoute('/admin/master', DashboardController::class, 'index');

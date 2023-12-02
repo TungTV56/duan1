@@ -10,6 +10,10 @@ class UserController extends Controller
     /*
         Đây là hàm hiển thị danh sách user
     */
+    public function __construct() {
+        check_auth();
+    }
+
     public function index() {
         $users = (new User)->all();
         

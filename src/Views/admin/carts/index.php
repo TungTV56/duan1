@@ -36,7 +36,7 @@
 
                                     <a href="/admin/products/create" class="btn btn-info btn-sm">Tạo mới</a>
                                 </div>
-                                
+
                                 <div class="card-block">
                                     <div class="dt-responsive table-responsive">
                                         <table id="simpletable" class="table table-striped table-bordered nowrap">
@@ -58,6 +58,17 @@
                                             </thead>
                                             <tbody>
                                                 <?php foreach ($carts as $cart) {
+                                                    switch ($cart["pttt"]) {
+                                                        case 1:
+                                                            $textmess = 'Thanh toán khi nhận hàng';
+                                                            break;
+                                                        case 2:
+                                                            $textmess = 'Thanh toán chuyển khoản';
+                                                            break;
+                                                        case 3:
+                                                            $textmess = 'Thanh toán trực tiếp';
+                                                            break;
+                                                    }
                                                 ?>
                                                     <tr>
                                                         <td><?= $cart['masp'] ?></td>
@@ -70,7 +81,7 @@
                                                         <td><?= $cart['email'] ?></td>
                                                         <td><?= $cart['phone'] ?></td>
                                                         <td><?= $cart['address'] ?></td>
-                                                        <td><?= $cart['pttt'] ?></td>
+                                                        <td><?= $textmess ?></td>
                                                         <!-- <td>
                                                             <a href="/admin/products/update?id=<?= $product['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
 

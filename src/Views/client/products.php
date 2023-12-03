@@ -17,8 +17,8 @@
         <div class="row">
             <?php
             foreach ($products as $product) {
-                $linksp = "/client/product-detail?idsp=".$product['id'];
-                ?>
+                $linksp = "/client/product-detail?idsp=" . $product['id'];
+            ?>
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">
                         <div class="product-upper">
@@ -30,12 +30,17 @@
                         </div>
 
                         <div class="product-option-shop">
-                            <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70"
-                                rel="nofollow" href="/canvas/shop/?add-to-cart=70">Add to cart</a>
+                            <form action="/client/cart" method="post" class="cart">
+                                <input type="hidden" name="id" value="<?= $product['id'] ?>">
+                                <input type="hidden" name="name" value="<?= $product['name'] ?>">
+                                <input type="hidden" name="price" value="<?= $product['price'] ?>">
+                                <input type="hidden" name="image" value="<?= $product['image'] ?>">
+                                <button class="add_to_cart_button" type="submit" name="addToCart">Add to cart</button>
+                            </form>
                         </div>
                     </div>
                 </div>
-                <?php
+            <?php
             }
             ?>
-</div>
+        </div>

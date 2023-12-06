@@ -1,5 +1,6 @@
 <?php
 
+use Ductong\BaseMvc\Controllers\Client\CommentController;
 use Ductong\BaseMvc\Controllers\Admin\UserController;
 use Ductong\BaseMvc\Controllers\Admin\CategoryController;
 use Ductong\BaseMvc\Controllers\Admin\DashboardController;
@@ -24,6 +25,8 @@ $router->addRoute('/', HomeController::class, 'index');
 $router->addRoute('/client/home', HomeController::class, 'index');
 $router->addRoute('/client/products', ProductsController::class, 'index');
 
+$router->addRoute('/client/comment', CommentController::class, 'comment');
+
 $router->addRoute('/client/cart', CartController::class, 'showCart');
 $router->addRoute('/deleteCart', CartController::class, 'deleteCart');
 $router->addRoute('/incrementQuantity', CartController::class, 'incrementQuantity');
@@ -41,7 +44,6 @@ $router->addRoute('/client/logout', LogInController::class, 'logout');
 $router->addRoute('/handleLogin', LoginController::class, 'handleLogin');
 $router->addRoute('/client/signup', SignUpController::class, 'index');
 $router->addRoute('/logout', LogoutController::class, 'logout');
-
 
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 $router->addRoute('/admin/master', DashboardController::class, 'index');

@@ -19,4 +19,8 @@ class  ShowOrderUserController extends Controller
             ]
         );
     }
+
+    public function yourOrder() {
+        $this->render('yourorder');
+    }
 }

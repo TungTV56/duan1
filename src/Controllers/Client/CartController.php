@@ -42,16 +42,20 @@ class  CartController extends Controller
             }
         }
 
-        $this->render('cart', ['cartPro'=> $_SESSION['cart']]);
+        $products = (new Product())->getLatestLimit10();
+
+        $this->render('cart', ['cartPro'=> $_SESSION['cart'], 'products' => $products]);
     }
 
     function deleteCart() {
         if (isset($_GET['i'])) {
             array_splice($_SESSION['cart'], $_GET['i'],1);
+            header('location: /client/cart');
         } else {
             unset($_SESSION['cart']);
+            unset($_SESSION['stt']);
+            header('Location: /');
         }
 
-        header('Location: /client/cart');
     }
 }

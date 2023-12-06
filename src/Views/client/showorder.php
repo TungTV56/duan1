@@ -42,6 +42,11 @@
                 </div>
 
                 <div class="form-row form-row-first validate-required">
+                    <span><strong>Ngày đặt hàng : </strong></span>
+                    <?= $order['order_date'] ?>
+                </div>
+
+                <div class="form-row form-row-first validate-required">
                     <span><strong>Phương thức thanh toán : </strong></span>
                     <?php
                     switch ($order['pay']) {

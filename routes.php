@@ -26,14 +26,18 @@ $router->addRoute('/client/products', ProductsController::class, 'index');
 
 $router->addRoute('/client/cart', CartController::class, 'showCart');
 $router->addRoute('/deleteCart', CartController::class, 'deleteCart');
+$router->addRoute('/incrementQuantity', CartController::class, 'incrementQuantity');
+$router->addRoute('/decrementQuantity', CartController::class, 'decrementQuantity');
 
 $router->addRoute('/client/order', OrderController::class, 'showOrder');
 $router->addRoute('/order', OrderController::class, 'order');
 
 $router->addRoute('/client/showorder', ShowOrderUserController::class, 'showOrderUser');
+$router->addRoute('/client/yourorder', ShowOrderUserController::class, 'yourOrder');
 
 $router->addRoute('/client/product-detail', ProDetailController::class, 'index');
 $router->addRoute('/client/login', LogInController::class, 'index');
+$router->addRoute('/client/logout', LogInController::class, 'logout');
 $router->addRoute('/handleLogin', LoginController::class, 'handleLogin');
 $router->addRoute('/client/signup', SignUpController::class, 'index');
 $router->addRoute('/logout', LogoutController::class, 'logout');

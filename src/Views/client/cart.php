@@ -58,8 +58,9 @@
                                             <td class="product-quantity">
                                                 <div class="quantity buttons_added">
                                                     <!-- <input type="button" class="minus" value="-"> -->
-                                                    <input type="number" size="4" class="input-text qty text" title="Qty" value="<?= $item['quantity'] ?>" min="0" step="1">
+                                                    <!-- <input type="number" size="4" class="input-text qty text" title="Qty" value="<?= $item['quantity'] ?>" min="0" step="1"> -->
                                                     <!-- <input type="button" class="plus" value="+"> -->
+                                                    <button type="button" class="btn btn-info"><?= $item['quantity'] ?></button>
                                                 </div>
                                             </td>
 
@@ -74,6 +75,7 @@
                                     <?php
                                         $i++;
                                     }
+                                    $_SESSION['stt'] = $i;
                                     ?>
                                     <tr>
                                         <td class="actions" colspan="7">
@@ -98,31 +100,34 @@
                             <div class="cross-sells">
                                 <h2>Có thể bạn quan tâm</h2>
                                 <ul class="products">
-                                    <li class="product">
-                                        <a href="single-product.html">
-                                            <img width="325" height="325" alt="T_4_front" class="attachment-shop_catalog wp-post-image" src="/ustora/img/product-2.jpg">
-                                            <h3>Ship Your Idea</h3>
-                                            <span class="price"><span class="amount">£20.00</span></span>
-                                        </a>
+                                    <?php
+                                    foreach ($products as $product) {
+                                        $link = "/client/product-detail?idsp=" . $product["p_id"];
+                                    ?>
+                                        <li class="product">
+                                            <a href="<?= $link ?>">
+                                                <img width="325" height="325" alt="T_4_front" class="attachment-shop_catalog wp-post-image" src="<?= $product['p_image'] ?>">
+                                                <h3><?= $product['p_name'] ?></h3>
+                                                <span class="price"><span class="amount">$ <?= $product['p_price'] ?></span></span>
+                                            </a>
+                                            <form action="/client/cart" method="post">
+                                                <input type="hidden" name="id" value="<?= $product['p_id'] ?>">
+                                                <input type="hidden" name="name" value="<?= $product['p_name'] ?>">
+                                                <input type="hidden" name="price" value="<?= $product['p_price'] ?>">
+                                                <input type="hidden" name="image" value="<?= $product['p_image'] ?>">
 
-                                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="22" rel="nofollow" href="single-product.html">Select options</a>
-                                    </li>
-
-                                    <li class="product">
-                                        <a href="single-product.html">
-                                            <img width="325" height="325" alt="T_4_front" class="attachment-shop_catalog wp-post-image" src="/ustora/img/product-4.jpg">
-                                            <h3>Ship Your Idea</h3>
-                                            <span class="price"><span class="amount">£20.00</span></span>
-                                        </a>
-
-                                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="22" rel="nofollow" href="single-product.html">Select options</a>
-                                    </li>
+                                                <button type="submit" name="addToCart" style="padding: 5px;">Add to cart</button>
+                                            </form>
+                                        </li>
+                                    <?php
+                                    }
+                                    ?>
                                 </ul>
                             </div>
 
 
                             <div class="cart_totals ">
-                                <h2>Cart Totals</h2>
+                                <h2>Tổng giỏ hàng</h2>
 
                                 <table cellspacing="0">
                                     <tbody>

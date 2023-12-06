@@ -14,6 +14,9 @@ class Order extends Model {
         'email',
         'phone',
         'address',
+        'order_date',
+        'status',
+        'id_user',
     ];
 
     function getCart() {

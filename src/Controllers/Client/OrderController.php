@@ -18,6 +18,11 @@ class OrderController extends Controller
 
     function order() {
         if (isset($_POST['pay'])) {
+            if (isset($_SESSION['user'])) {
+                $id_user = $_SESSION['user']['id'];
+            } else {
+                $id_user = 0;
+            }
             $id_order = "M-".rand(0,999);
             $data = [
                 'id_order'=> $id_order,
@@ -27,23 +32,19 @@ class OrderController extends Controller
                 'email' => $_POST['email'],
                 'phone' => $_POST['phone'],
                 'address' => $_POST['address'],
+                'order_date'=> date('Y-m-d', time()),
+                'status'=> 0,
+                'id_user'=> $id_user,
             ];
-        //     // $total_order = $_POST['total_order'];
-        //     // $username = $_POST['username'];
-        //     // $address = $_POST['address'];
-        //     // $email = $_POST['email'];
-        //     // $phone = $_POST['phone'];
-        //     // $pttt = $_POST['pttt'];
-        //     // $madh = "M-".rand(0,999);
 
-            (new Order)->insert($data);
-            $order = (new Order)->all();
-            $_SESSION['iddh'] = $order[0]['id'];
+            $order_id = (new Order)->insert($data);
+
+            $_SESSION['iddh'] = $order_id;
             if (isset($_SESSION['cart']) && $_SESSION['cart'] > 0) {
                 foreach ($_SESSION['cart'] as $item) {
                     $data = [
                         'id_product'=> $item['id'],
-                        'id_order'=> $order[0]['id'],
+                        'id_order'=> $order_id,
                         'quantity'=> $item['quantity'],
                         'total_order'=> $item['price'],
                         'name_pro'=> $item['name'],
@@ -53,6 +54,7 @@ class OrderController extends Controller
                     (new OrderDetail())->insert($data);
                 }
                 unset($_SESSION['cart']);
+                unset($_SESSION['stt']);
             }
             
             header('location: client/showorder');

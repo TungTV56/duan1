@@ -15,24 +15,37 @@
         <div class="col-1" style="width: 100%">
             <div class="woocommerce-billing-fields">
                 <h3>Chi tiết thanh toán</h3>
+                <?php
+                if (isset($_SESSION["user"])) {
+                    $name = $_SESSION["user"]["username"];
+                    $address = $_SESSION["user"]["address"];
+                    $email = $_SESSION["user"]["email"];
+                    $phone = $_SESSION["user"]["phone"];
+                } else {
+                    $name = "";
+                    $address = "";
+                    $email = "";
+                    $phone = "";
+                }
+                ?>
                 <p class="form-row form-row-first validate-required">
                     <label class="" for="username">Nhập tên</label>
-                    <input type="text" value="" placeholder="" id="username" name="username" class="input-text ">
+                    <input type="text" value="<?= $name ?>" placeholder="" id="username" name="username"  class="input-text ">
                 </p>
 
                 <p class="form-row form-row-first validate-required">
                     <label class="" for="address">Nhập địa chỉ</label>
-                    <input type="text" value="" placeholder="" id="address" name="address" class="input-text ">
+                    <input type="text" value="<?= $address ?>" placeholder="" id="address" name="address" class="input-text ">
                 </p>
 
                 <p class="form-row form-row-first validate-required">
                     <label class="" for="email">Nhập email</label>
-                    <input type="email" value="" placeholder="" id="email" name="email" class="input-text" style="width: 100%">
+                    <input type="email" value="<?= $email ?>" placeholder="" id="email" name="email" class="input-text" style="width: 100%">
                 </p>
 
                 <p class="form-row form-row-first validate-required">
                     <label class="" for="phone">Nhập số điện thoại</label>
-                    <input type="text" value="" placeholder="" id="phone" name="phone" class="input-text ">
+                    <input type="text" value="<?= $phone ?>" placeholder="" id="phone" name="phone" class="input-text ">
                 </p>
 
                 <p class="form-row form-row-first validate-required">

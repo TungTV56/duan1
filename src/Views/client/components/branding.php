@@ -9,7 +9,7 @@
 
                 <div class="col-sm-6">
                     <div class="shopping-item">
-                        <a href="/client/cart">Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                        <a href="/client/cart">Giỏ hàng <i class="fa fa-shopping-cart"></i> <span class="product-count"><?= isset($_SESSION['stt']) ? $_SESSION['stt'] : "0" ?></span></a>
                     </div>
                 </div>
             </div>

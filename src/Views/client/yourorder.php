@@ -18,37 +18,65 @@
             <table class="shop_table">
                 <thead>
                     <tr>
-                        <th class="product-name">Tên sản phẩm</th>
-                        <th class="product-total">Tổng</th>
+                        <th class="product-name">Mã đơn hàng</th>
+                        <th class="product-total">Ngày đặt hàng</th>
+                        <th class="product-total">Số lượng mặt hàng</th>
+                        <th class="product-total">Tổng tiền</th>
+                        <th class="product-total">Trạng thái</th>
                     </tr>
                 </thead>
                 <?php
                 $total_order = 0;
-                foreach ($_SESSION['cart'] as $item) {
-                    $total_amount = $item['price'] * $item['quantity'];
-                    $total_order += $total_amount;
+                $i = 0;
+                foreach ($listOrder as $item) {
+                    switch ($item['status']) {
+                        case 0:
+                            $status = 'Đơn hàng mới';
+                            break;
+                        case 1:
+                            $status = 'Đang xử lí';
+                            break;
+                        case 2:
+                            $status = 'Đã thanh toán';
+                            break;
+                    }
                 ?>
-                    <input type="hidden" value="<?= $total_order ?>" name="total_order">
                     <tbody>
                         <tr class="cart_item">
-                            <td class="product-name">
-                                <?= $item['name'] ?> <strong class="product-quantity">× <?= $item['quantity'] ?></strong> </td>
-                            <td class="product-total">
-                                <span class="amount">$ <?= $total_amount ?></span>
+                            <td>
+                                <span><?= $item['id_order'] ?></span>
+                            </td>
+
+                            <td>
+                                <span><?= $item['order_date'] ?></span>
+                            </td>
+
+                            <td>
+                                <span><?= $countOrder[$i] ?></span>
+                            </td>
+
+                            <td>
+                                <span>$ <?= $item['total_order'] ?></span>
+                            </td>
+
+                            <td>
+                                <span><?= $status ?></span>
                             </td>
                         </tr>
                     </tbody>
                 <?php
+                $i++;
                 }
                 ?>
-                <tr class="order-total">
+                <!-- <tr class="order-total">
                     <th>Tổng đơn hàng</th>
                     <td><strong><span class="amount">$ <?= $total_order ?></span></strong> </td>
-                </tr>
+                </tr> -->
             </table>
             <div class="form-row place-order">
                 <input type="submit" data-value="Place order" value="Đặt hàng" id="place_order" name="pay" class="button alt">
             </div>
+            <a href="/client/showorder">xem thanh toán</a>
         </div>
     </div>
 </form>

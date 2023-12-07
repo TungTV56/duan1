@@ -50,7 +50,7 @@
 
                 <p class="form-row form-row-first validate-required">
                     <label class="" for="">Chọn hình thức thanh toán</label>
-                    <input type="radio" name="pttt" value="1"> Thanh toán khi nhận hàng <br>
+                    <input type="radio" checked name="pttt" value="1"> Thanh toán khi nhận hàng <br>
                     <input type="radio" name="pttt" value="2"> Thanh toán chuyển khoản <br>
                     <input type="radio" name="pttt" value="3"> Thanh toán trực tiếp <br>
                 </p>

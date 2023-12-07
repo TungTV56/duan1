@@ -21,6 +21,13 @@ class  ShowOrderUserController extends Controller
     }
 
     public function yourOrder() {
-        $this->render('yourorder');
+        if(isset($_SESSION['user'])) {
+        $listOrder = (new Order())->getAllOrder($_SESSION['user']['id']);
+
+        foreach ($listOrder as $order) {
+            $countOrder[] = (new Order())->getAllOrder_count($order['id']);
+        }
+    }
+    $this->render('yourorder', ['listOrder' => $listOrder, 'countOrder'=> $countOrder]);
     }
 }

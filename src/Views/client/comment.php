@@ -26,8 +26,8 @@
         </div>
     </form>
     <?php 
-        if(isset($_GET['id'])){
-            echo $_GET['id'];
+        if(isset($_GET['idsp'])){
+            echo $_GET['idsp'];
         }
     ?>
 </body>

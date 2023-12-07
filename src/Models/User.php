@@ -37,4 +37,17 @@ class User extends Model {
 
         return $stmt->fetch();
     }
+    function checkemail($email){
+        $sql= "select * from users where email = :email";
+
+        $stmt = $this->conn->prepare($sql);  
+
+        $stmt->bindParam(':email', $email);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);   
+
+        return $stmt->fetch();
+    }
 }

@@ -41,6 +41,8 @@ $router->addRoute('/client/logout', LogInController::class, 'logout');
 $router->addRoute('/handleLogin', LoginController::class, 'handleLogin');
 $router->addRoute('/client/signup', SignUpController::class, 'index');
 $router->addRoute('/logout', LogoutController::class, 'logout');
+$router->addRoute('/client/showforgot', LoginController::class, 'forgot');
+$router->addRoute('/client/forgotpassword', LoginController::class, 'showforgot');
 
 //admin
 

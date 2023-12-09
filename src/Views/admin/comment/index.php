@@ -34,7 +34,7 @@
                                 <div class="card-header">
                                     <h5>Danh sách Bình luận</h5>
 
-                                    <a href="/admin/products/create" class="btn btn-info btn-sm">Tạo mới</a>
+                                    
                                 </div>
                                 
                                 <div class="card-block">
@@ -51,20 +51,23 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                
+                                                <?php
+                                                    foreach($comment as $comments) {
+                                                ?>
                                                     <tr>
-                                                        <td>1</td>
-                                                        <td>Sản phẩm tốt!</td>
-                                                        <td>tung</td>
-                                                        <td>17</td>
-                                                        <td>13:23:26 06-07-2023</td>
+                                                        <td><?=$comments['id'] ?></td>
+                                                        <td><?=$comments['content'] ?></td>
+                                                        <td><?=$comments['username'] ?></td>
+                                                        <td><?=$comments['id_product'] ?></td>
+                                                        <td><?=$comments['date_cmt'] ?></td>
                                                         <td>
-                                                            <form action="/admin/comment/delete?id=<?= $comments['id'] ?>" method="post">
+                                                            <form action="/admin/comment/delete?id=<?= $comments['id']?>" method="post">
                                                                 <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm mt-2">Xóa</button>
                                                             </form>
                                                         </td>
                                                     </tr>
-                                                    <tr>
+                                                <?php } ?>
+                                                    <!-- <tr>
                                                         <td>2</td>
                                                         <td>Tuyệt vời!</td>
                                                         <td>user0506</td>
@@ -111,7 +114,7 @@
                                                                 <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm mt-2">Xóa</button>
                                                             </form>
                                                         </td>
-                                                    </tr>
+                                                    </tr> -->
                                                 
                                             </tbody>
 

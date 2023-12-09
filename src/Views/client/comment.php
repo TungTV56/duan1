@@ -16,12 +16,23 @@
 
 <body>
     <h2>Bình luận</h2>
-    <p><label for="name">Name</label></p>
+    
     <?php
-    if (isset($_GET['idsp'])) {
-        echo $_GET['idsp'];
-    }
+    foreach ($comment as $comments) {
+        if (isset($_GET['idsp'])) { 
+            $id_pro=$_GET['idsp'];
+        }
     ?>
+        <p><label for="name"><?=$comments['username'] ?></label></p>
+        <input type="hidden" name="idsp" value="<?=$id_pro ?>">
+        <table cellspacing=0 >
+            <tr>
+                <td><?=$comments['content'] ?></td>
+                <td class="text-muted"><?=$comments['date_cmt']?></td>
+            </tr>
+        </table>
+        <hr>
+    <?php }?>
     <?php
     if (isset($_SESSION['user'])) {
     ?>

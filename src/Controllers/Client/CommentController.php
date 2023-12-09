@@ -4,6 +4,7 @@ namespace Ductong\BaseMvc\Controllers\Client;
 
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\Comment;
+use Ductong\BaseMvc\Models\Product;
 
 
 
@@ -29,6 +30,18 @@ class  CommentController extends Controller
 
             header('location: /client/index');
         }
-        $this->renderComment('comment');
+
+        $product=(new Product())->all();
+
+        $this->renderComment("comment", [
+            "product" => $product
+        ]);
+    }
+
+    public function get() {   
+           
+        $comment = (new Comment)->getComment();  
+
+        $this->renderComment("comment", ['comment' => $comment]);
     }
 }

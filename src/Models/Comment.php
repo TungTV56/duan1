@@ -12,18 +12,39 @@ final class Comment extends Model{
         'date_cmt',
     ];
 
-    function getComment($id_product) {
-        if($id_product > 0){
+    function getComment() {
+        
         $sql = "SELECT
-        c.id , c.content content,u.username username,p.id id_pro, c.date_cmt ngaybinhluan
+        c.id , c.content content,u.username username,p.id id_product, c.date_cmt date_cmt
         FROM comment c
-        JOIN users u 
+        LEFT JOIN users u 
         ON c.id_user = u.id
-        JOIN products p 
+        LEFT JOIN products p 
         ON c.id_product = p.id 
-        WHERE p.id = $id_product";
+        "; 
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetchAll();
+    }
+    function getComments($proID) {
+        if($proID>0){
+        $sql = "SELECT
+        c.id , c.content content,u.username username,c.id_product id_product, c.date_cmt date_cmt
+        FROM comment c
+        LEFT JOIN users u 
+        ON c.id_user = u.id
+        LEFT JOIN products p 
+        ON c.id_product = p.id 
+        WHERE c.id_product= :id_pro
+        ORDER BY p.id"; 
         }
         $stmt = $this->conn->prepare($sql);
+
+        $stmt -> bindValue(':proID',$proID);
 
         $stmt->execute();
 

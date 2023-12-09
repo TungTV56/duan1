@@ -136,7 +136,7 @@
                      </div>
 
                      
-                     <iframe src="/client/comment?idsp=<?= $proDetail['id'] ?>" width="100%" height="450px" frameborder="0"></iframe>
+                     <iframe src="/client/comment?idsp=<?= $proDetail['id'] ?>" width="100%" height="500px" frameborder="0"></iframe>
                      <hr>
 
                      <div class="related-products-wrapper" style="width:200px;">

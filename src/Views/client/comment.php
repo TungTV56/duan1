@@ -11,34 +11,46 @@
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
 
     <?php require_once 'components/css.php' ?>
+    <style>
+        .username {
+            display: flex;
+        }
+    </style>
 
 </head>
 
 <body>
     <h2>Bình luận</h2>
-    
+
     <?php
     foreach ($comment as $comments) {
-        if (isset($_GET['idsp'])) { 
-            $id_pro=$_GET['idsp'];
+        if (isset($_GET['idsp'])) {
+            $idsp = $_GET['idsp'];
+           
         }
     ?>
-        <p><label for="name"><?=$comments['username'] ?></label></p>
-        <input type="hidden" name="idsp" value="<?=$id_pro ?>">
-        <table cellspacing=0 >
+
+        <div class="username">
+            <label for="name">
+                <?= $comments['username'] ?>
+            </label>
+            <p class="text-muted"><small> | <?= $comments['date_cmt'] ?></small></p>
+            <p></p>
+        </div>
+        <p></p>
+        <table cellspacing=0>
             <tr>
-                <td><?=$comments['content'] ?></td>
-                <td class="text-muted"><?=$comments['date_cmt']?></td>
+                <td><?= $comments['content'] ?></td>
             </tr>
         </table>
         <hr>
-    <?php }?>
+    <?php } ?>
     <?php
     if (isset($_SESSION['user'])) {
     ?>
 
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-            <input type="hidden" name="idsp">
+            <input type="hidden" name="idsp" value="<?=$idsp?>">
             <div class="submit-review">
 
 

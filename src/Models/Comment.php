@@ -30,8 +30,7 @@ final class Comment extends Model{
 
         return $stmt->fetchAll();
     }
-    function getComments($proID) {
-        if($proID>0){
+    function getComments($idsp) {
         $sql = "SELECT
         c.id , c.content content,u.username username,c.id_product id_product, c.date_cmt date_cmt
         FROM comment c
@@ -39,12 +38,10 @@ final class Comment extends Model{
         ON c.id_user = u.id
         LEFT JOIN products p 
         ON c.id_product = p.id 
-        WHERE c.id_product= :id_pro
-        ORDER BY p.id"; 
-        }
+        WHERE p.id = $idsp";
         $stmt = $this->conn->prepare($sql);
 
-        $stmt -> bindValue(':proID',$proID);
+       
 
         $stmt->execute();
 

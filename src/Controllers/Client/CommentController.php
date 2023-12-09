@@ -38,10 +38,15 @@ class  CommentController extends Controller
         ]);
     }
 
-    public function get() {   
-           
-        $comment = (new Comment)->getComment();  
+    public function get(){   
+        if ($_GET['idsp'] && $_GET['idsp'] > 0) {
+            $idsp = $_GET['idsp'];
+            $product = (new Product())->findOne($idsp);
+            $comment = (new Comment)->getComments($idsp); 
+        }
 
-        $this->renderComment("comment", ['comment' => $comment]);
+        $this->renderComment("comment", [
+            "product" => $product,
+            'comment' => $comment]);
     }
 }

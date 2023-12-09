@@ -23,19 +23,19 @@ $router->addRoute('/', HomeController::class, 'index');
 
 $router->addRoute('/client/home', HomeController::class, 'index');
 $router->addRoute('/client/products', ProductsController::class, 'index');
+$router->addRoute('/client/product-detail', ProDetailController::class, 'index');
+
+//cart
 
 $router->addRoute('/client/cart', CartController::class, 'showCart');
 $router->addRoute('/deleteCart', CartController::class, 'deleteCart');
-$router->addRoute('/incrementQuantity', CartController::class, 'incrementQuantity');
-$router->addRoute('/decrementQuantity', CartController::class, 'decrementQuantity');
-
 $router->addRoute('/client/order', OrderController::class, 'showOrder');
 $router->addRoute('/order', OrderController::class, 'order');
-
 $router->addRoute('/client/showorder', ShowOrderUserController::class, 'showOrderUser');
 $router->addRoute('/client/yourorder', ShowOrderUserController::class, 'yourOrder');
 
-$router->addRoute('/client/product-detail', ProDetailController::class, 'index');
+// login
+
 $router->addRoute('/client/login', LogInController::class, 'index');
 $router->addRoute('/client/logout', LogInController::class, 'logout');
 $router->addRoute('/handleLogin', LoginController::class, 'handleLogin');
@@ -44,9 +44,10 @@ $router->addRoute('/logout', LogoutController::class, 'logout');
 $router->addRoute('/client/showforgot', LoginController::class, 'forgot');
 $router->addRoute('/client/forgotpassword', LoginController::class, 'showforgot');
 
+//admin
+
 $router->addRoute('/admin/dashboard', DashboardController::class, 'index');
 $router->addRoute('/admin/master', DashboardController::class, 'index');
-$router->addRoute('/admin/carts', ViewCartAdminController::class, 'index');
 
 $router->addRoute('/admin/users', UserController::class, 'index');
 $router->addRoute('/admin/users/create', UserController::class, 'create');
@@ -62,6 +63,10 @@ $router->addRoute('/admin/products', ProductController::class, 'index');
 $router->addRoute('/admin/products/create', ProductController::class, 'create');
 $router->addRoute('/admin/products/update', ProductController::class, 'update');
 $router->addRoute('/admin/products/delete', ProductController::class, 'delete');
+
+$router->addRoute('/admin/carts', ViewCartAdminController::class, 'index');
+$router->addRoute('/admin/carts/update', ViewCartAdminController::class, 'update');
+$router->addRoute('/admin/carts/delete', ViewCartAdminController::class, 'delete');
 
 
 

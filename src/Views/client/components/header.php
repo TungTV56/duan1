@@ -5,7 +5,6 @@
                 <div class="user-menu">
                     <ul>
                         <li><a href="/client/yourorder"><i class="fa fa-shopping-cart"></i> Đơn hàng của tôi</a></li>
-                        <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
                         <?php
                         if (!isset($_SESSION["user"])) {
                         ?>

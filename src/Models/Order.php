@@ -51,6 +51,18 @@ class Order extends Model {
         return $stmt->fetchAll();
     }
 
+    function getOrder_iddh($iddh) {
+        $sql = "SELECT * from orders where id = $iddh";
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetch();
+    }
+
     function getAllOrder_count($idorder) {
         $sql = "SELECT * from order_details where id_order = :idorder";
 

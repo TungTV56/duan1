@@ -12,7 +12,8 @@ class HomeController extends Controller
     */
     public function index() {
         $products = (new Product())->getLatestLimit10();
+        $allproducts = (new Product())->all();
 
-        $this->render('home', ['products'=> $products]);
+        $this->render('home', ['products'=> $products, 'allproducts' => $allproducts]);
     }
 }

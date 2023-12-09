@@ -30,22 +30,22 @@
                 ?>
                 <p class="form-row form-row-first validate-required">
                     <label class="" for="username">Nhập tên</label>
-                    <input type="text" value="<?= $name ?>" placeholder="" id="username" name="username"  class="input-text ">
+                    <input type="text" value="<?= $name ?>" placeholder="" id="username" required name="username"  class="input-text ">
                 </p>
 
                 <p class="form-row form-row-first validate-required">
                     <label class="" for="address">Nhập địa chỉ</label>
-                    <input type="text" value="<?= $address ?>" placeholder="" id="address" name="address" class="input-text ">
+                    <input type="text" value="<?= $address ?>" placeholder="" id="address" required name="address" class="input-text ">
                 </p>
 
                 <p class="form-row form-row-first validate-required">
                     <label class="" for="email">Nhập email</label>
-                    <input type="email" value="<?= $email ?>" placeholder="" id="email" name="email" class="input-text" style="width: 100%">
+                    <input type="email" value="<?= $email ?>" placeholder="" id="email" name="email" required class="input-text" style="width: 100%">
                 </p>
 
                 <p class="form-row form-row-first validate-required">
                     <label class="" for="phone">Nhập số điện thoại</label>
-                    <input type="text" value="<?= $phone ?>" placeholder="" id="phone" name="phone" class="input-text ">
+                    <input type="text" value="<?= $phone ?>" placeholder="" id="phone" name="phone" required class="input-text ">
                 </p>
 
                 <p class="form-row form-row-first validate-required">

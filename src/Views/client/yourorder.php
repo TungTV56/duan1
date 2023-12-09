@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<form enctype="multipart/form-data" action="/order" class="checkout" method="post" name="checkout" style="padding: 0 100px 10px 100px;">
+<form enctype="multipart/form-data" action="" class="checkout" method="post" name="checkout" style="padding: 0 100px 10px 100px;">
 
     <div id="order_review" style="position: relative;">
         <h3 id="order_review_heading">Đơn hàng của bạn</h3>
@@ -26,10 +26,51 @@
                     </tr>
                 </thead>
                 <?php
-                $total_order = 0;
-                $i = 0;
-                foreach ($listOrder as $item) {
-                    switch ($item['status']) {
+                if (isset($_SESSION['user'])) {
+                    $total_order = 0;
+                    $i = 0;
+                    foreach ($listOrder as $item) {
+                        switch ($item['status']) {
+                            case 0:
+                                $status = 'Đơn hàng mới';
+                                break;
+                            case 1:
+                                $status = 'Đang xử lí';
+                                break;
+                            case 2:
+                                $status = 'Đã thanh toán';
+                                break;
+                        }
+                ?>
+                        <tbody>
+                            <tr class="cart_item">
+                                <td>
+                                    <span><?= $item['id_order'] ?></span>
+                                </td>
+
+                                <td>
+                                    <span><?= $item['order_date'] ?></span>
+                                </td>
+
+                                <td>
+                                    <span><?= $countOrder[$i] ?></span>
+                                </td>
+
+                                <td>
+                                    <span>$ <?= $item['total_order'] ?></span>
+                                </td>
+
+                                <td>
+                                    <span><?= $status ?></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    <?php
+                        $i++;
+                    }
+                } 
+                if (isset($_SESSION['iddh']) && !isset($_SESSION['user'])) {
+                    switch ($listOrderIddh['status']) {
                         case 0:
                             $status = 'Đơn hàng mới';
                             break;
@@ -40,23 +81,23 @@
                             $status = 'Đã thanh toán';
                             break;
                     }
-                ?>
+                    ?>
                     <tbody>
                         <tr class="cart_item">
                             <td>
-                                <span><?= $item['id_order'] ?></span>
+                                <span><?= $listOrderIddh['id_order'] ?></span>
                             </td>
 
                             <td>
-                                <span><?= $item['order_date'] ?></span>
+                                <span><?= $listOrderIddh['order_date'] ?></span>
                             </td>
 
                             <td>
-                                <span><?= $countOrder[$i] ?></span>
+                                <span><?= $countOrder ?></span>
                             </td>
 
                             <td>
-                                <span>$ <?= $item['total_order'] ?></span>
+                                <span>$ <?= $listOrderIddh['total_order'] ?></span>
                             </td>
 
                             <td>
@@ -65,18 +106,10 @@
                         </tr>
                     </tbody>
                 <?php
-                $i++;
                 }
                 ?>
-                <!-- <tr class="order-total">
-                    <th>Tổng đơn hàng</th>
-                    <td><strong><span class="amount">$ <?= $total_order ?></span></strong> </td>
-                </tr> -->
             </table>
-            <div class="form-row place-order">
-                <input type="submit" data-value="Place order" value="Đặt hàng" id="place_order" name="pay" class="button alt">
-            </div>
-            <a href="/client/showorder">xem thanh toán</a>
+            <a href="/client/showorder"> >>xem thông tin vừa đặt</a>
         </div>
     </div>
 </form>

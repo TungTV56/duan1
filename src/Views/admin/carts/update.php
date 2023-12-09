@@ -52,9 +52,9 @@
                                         ?>
                                         <input type="text" name="status" class="form-control" value="<?= $status ?>" readonly>
 
-                                        <input type="radio" name="status" value="0"> Đơn hàng mới <br>
-                                        <input type="radio" name="status" value="1"> Đang xử lý <br>
-                                        <input type="radio" name="status" value="2"> Đã thanh toán <br>
+                                        <input type="radio" name="status" <?= ($order['status'] == 0) ? 'checked' : '' ?> value="0"> Đơn hàng mới <br>
+                                        <input type="radio" name="status" <?= ($order['status'] == 1) ? 'checked' : '' ?> value="1"> Đang xử lý <br>
+                                        <input type="radio" name="status" <?= ($order['status'] == 2) ? 'checked' : '' ?> value="2"> Đã thanh toán <br>
 
                                         <button type="submit" name="btn-submit" class="btn btn-info mt-3">Submit</button>
                                         <a href="/admin/carts" class="btn btn-primary mt-3">Quay lại d/s</a>

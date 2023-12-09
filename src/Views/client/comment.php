@@ -16,20 +16,32 @@
 
 <body>
     <h2>Bình luận</h2>
-    <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-        <input type="hidden" name="idpro">
-        <div class="submit-review">
-            <p><label for="name">Name</label></p>
-
-            <p><label for="review"></label> <textarea name="review" id="" cols="5" rows="10"></textarea></p>
-            <p><input type="submit" value="Submit"></p>
-        </div>
-    </form>
-    <?php 
-        if(isset($_GET['idsp'])){
-            echo $_GET['idsp'];
-        }
+    <p><label for="name">Name</label></p>
+    <?php
+    if (isset($_GET['idsp'])) {
+        echo $_GET['idsp'];
+    }
     ?>
+    <?php
+    if (isset($_SESSION['user'])) {
+    ?>
+
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
+            <input type="hidden" name="idsp">
+            <div class="submit-review">
+
+
+                <p><label for="review"></label> <textarea name="content" id="" cols="5" rows="10"></textarea></p>
+                <p><input type="submit" value="Submit" name="btn-submit"></p>
+            </div>
+        </form>
+    <?php
+    } else {
+    ?>
+        <h4 class="text-danger">Vui lòng Đăng nhập để bình luận!</h4>
+    <?php } ?>
+
+
 </body>
 
 </html>

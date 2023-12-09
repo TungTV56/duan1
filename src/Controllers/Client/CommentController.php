@@ -22,14 +22,13 @@ class  CommentController extends Controller
                 'content' => $_POST['content'],
                 'id_user' => $_SESSION['user']['id'],
                 'id_product' => $_POST['id_product'],
-                'date_cmt' => date('Y-m-d', time()),
+                'date_cmt' => date('Y-m-d',time()),
             ];
 
             (new Comment)->insert($data);
 
-            
+            header('location: /client/index');
         }
-
-        $this->renderComment('client/comment');
+        $this->renderComment('comment');
     }
 }

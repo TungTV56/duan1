@@ -1,6 +1,7 @@
 <?php
 
 use Ductong\BaseMvc\Controllers\Client\CommentController;
+use Ductong\BaseMvc\Controllers\Admin\CommentsController;
 use Ductong\BaseMvc\Controllers\Admin\UserController;
 use Ductong\BaseMvc\Controllers\Admin\CategoryController;
 use Ductong\BaseMvc\Controllers\Admin\DashboardController;
@@ -63,6 +64,8 @@ $router->addRoute('/admin/products', ProductController::class, 'index');
 $router->addRoute('/admin/products/create', ProductController::class, 'create');
 $router->addRoute('/admin/products/update', ProductController::class, 'update');
 $router->addRoute('/admin/products/delete', ProductController::class, 'delete');
+
+$router->addRoute('/admin/comment', CommentsController::class, 'index');
 
 
 

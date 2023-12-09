@@ -31,6 +31,8 @@ class  LogInController extends Controller
                 header('Location: /admin/dashboard');
                 exit();
             }
+            unset($_SESSION['iddh']);
+            unset($_SESSION['cart']);
 
             header('Location: /');
             exit();
@@ -38,5 +40,25 @@ class  LogInController extends Controller
             $validate = ['error' => 'Tên đăng nhập hoặc mật khẩu sai!'];
             $this->render('login', $validate);
         }
+    }
+
+    public function showforgot() {
+        $this->render('forgotpassword');
+    }
+    public function forgot(){
+        if(isset($_POST['submit'])){
+        $email = $_POST['email'];
+        $checkemail = (new User())->checkemail($email);
+        if(is_array($checkemail)){
+            $username = $checkemail['username'];
+            $password = $checkemail['password'];
+            $data = ['name' => 'tên đăng nhập của bạn là: '.$username.'',
+                    'pass' => 'mật khẩu của bạn là: '.$password.'',];
+            $this->render('forgotpassword', $data);
+        }else{
+            $error = ['error' => 'Không tìm thấy email!'];
+            $this->render('forgotpassword', $error);
+        }
+    }
     }
 }

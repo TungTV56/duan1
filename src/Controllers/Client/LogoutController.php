@@ -16,6 +16,8 @@ class LogoutController extends Controller
     */
     public function logout() {
         unset($_SESSION['user']);
+        unset($_SESSION['iddh']);
+        unset($_SESSION['cart']);
 
         header('Location: /');
     }

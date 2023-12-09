@@ -6,7 +6,7 @@
                 <div class="page-header-title">
                     <i class="feather icon-home bg-c-blue"></i>
                     <div class="d-inline">
-                        <h5>Products</h5>
+                        <h5>Đơn hàng</h5>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                         <li class="breadcrumb-item">
                             <a href="/admin/dashboard"><i class="feather icon-home"></i></a>
                         </li>
-                        <li class="breadcrumb-item"><a href="#!">Products</a> </li>
+                        <li class="breadcrumb-item"><a href="#!">Đơn hàng</a> </li>
                     </ul>
                 </div>
             </div>
@@ -32,9 +32,7 @@
                         <div class="col-sm-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h5>Danh sách Products</h5>
-
-                                    <a href="/admin/products/create" class="btn btn-info btn-sm">Tạo mới</a>
+                                    <h5>Danh sách đơn hàng</h5>
                                 </div>
 
                                 <div class="card-block">
@@ -42,55 +40,55 @@
                                         <table id="simpletable" class="table table-striped table-bordered nowrap">
                                             <thead>
                                                 <tr>
-                                                    <th>Mã sản phẩm</th>
-                                                    <th>Tên sản phẩm</th>
-                                                    <th>Giá</th>
-                                                    <th>Số lượng</th>
+                                                    <th>Mã Đơn hàng</th>
+                                                    <th>Khách hàng</th>
+                                                    <th>Số lượng mặt hàng</th>
                                                     <th>Tổng tiền</th>
-                                                    <th>image</th>
-                                                    <th>User name</th>
-                                                    <th>Email</th>
-                                                    <th>Phone</th>
-                                                    <th>Adress</th>
-                                                    <th>hình thức thanh toán</th>
-                                                    <!-- <th>Action</th> -->
+                                                    <th>Trạng thái đơn hàng</th>
+                                                    <th>Ngày đăt hàng</th>
+                                                    <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php foreach ($carts as $cart) {
-                                                    switch ($cart["pttt"]) {
+                                                <?php
+                                                $i = 0;
+                                                foreach ($listOrder as $order) {
+                                                    switch ($order['status']) {
+                                                        case 0:
+                                                            $status = 'Đơn hàng mới';
+                                                            break;
                                                         case 1:
-                                                            $textmess = 'Thanh toán khi nhận hàng';
+                                                            $status = 'Đang xử lí';
                                                             break;
                                                         case 2:
-                                                            $textmess = 'Thanh toán chuyển khoản';
-                                                            break;
-                                                        case 3:
-                                                            $textmess = 'Thanh toán trực tiếp';
+                                                            $status = 'Đã thanh toán';
                                                             break;
                                                     }
                                                 ?>
                                                     <tr>
-                                                        <td><?= $cart['masp'] ?></td>
-                                                        <td><?= $cart['tensp'] ?></td>
-                                                        <td>$<?= number_format($cart['giasp'], 0, ',', '.') ?></td>
-                                                        <td><?= $cart['soluong'] ?></td>
-                                                        <td>$<?= $cart['tongsl'] ?></td>
-                                                        <td><img src="<?= $cart['img'] ?>" alt="" width="100px"></td>
-                                                        <td><?= $cart['username'] ?></td>
-                                                        <td><?= $cart['email'] ?></td>
-                                                        <td><?= $cart['phone'] ?></td>
-                                                        <td><?= $cart['address'] ?></td>
-                                                        <td><?= $textmess ?></td>
-                                                        <!-- <td>
-                                                            <a href="/admin/products/update?id=<?= $product['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
+                                                        <td><?= $order['id_order'] ?></td>
+                                                        <td>
+                                                            Tên: <?= $order['username'] ?><br>
+                                                            Email: <?= $order['email'] ?><br>
+                                                            SĐT: <?= $order['phone'] ?><br>
+                                                            Địa chỉ: <?= $order['address'] ?><br>
+                                                        </td>
+                                                        <td><?= $countOrder[$i] ?></td>
+                                                        <td>$<?= $order['total_order'] ?></td>
+                                                        <td><?= $status ?></td>
+                                                        <td><?= $order['order_date'] ?></td>
+                                                        <td>
+                                                            <a href="/admin/carts/update?id=<?= $order['id'] ?>" class="btn btn-primary btn-sm">Cập nhật</a>
 
-                                                            <form action="/admin/products/delete?id=<?= $product['id'] ?>" method="post">
+                                                            <form action="/admin/carts/delete?id=<?= $order['id'] ?>" method="post">
                                                                 <button type="submit" onclick="return confirm('Bạn có chắc chắn xóa?');" class="btn btn-danger btn-sm mt-2">Xóa</button>
                                                             </form>
-                                                        </td> -->
+                                                        </td>
                                                     </tr>
-                                                <?php } ?>
+                                                <?php
+                                                $i++;
+                                                }
+                                                ?>
                                             </tbody>
 
                                         </table>

@@ -16,6 +16,7 @@
         <?= !empty($error) ? $error : "" ?>
       </p>
     </div>
+    <a href="/client/forgotpassword"><label style="margin-left: 195px;">Quên mật khẩu</label></a>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
         <div class="checkbox">

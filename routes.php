@@ -25,6 +25,12 @@ $router->addRoute('/', HomeController::class, 'index');
 
 $router->addRoute('/client/home', HomeController::class, 'index');
 $router->addRoute('/client/products', ProductsController::class, 'index');
+$router->addRoute('/client/product-detail', ProDetailController::class, 'index');
+
+//cart
+
+$router->addRoute('/client/comment', CommentController::class, 'comment');
+$router->addRoute('/client/comment', CommentController::class, 'get');
 
 $router->addRoute('/client/cart', CartController::class, 'showCart');
 $router->addRoute('/deleteCart', CartController::class, 'deleteCart');
@@ -63,9 +69,12 @@ $router->addRoute('/admin/products/create', ProductController::class, 'create');
 $router->addRoute('/admin/products/update', ProductController::class, 'update');
 $router->addRoute('/admin/products/delete', ProductController::class, 'delete');
 
+
 $router->addRoute('/admin/comment', CommentsController::class, 'index');
 $router->addRoute('/admin/comment/delete', CommentsController::class, 'delete');
+
 
 $router->addRoute('/admin/carts', ViewCartAdminController::class, 'index');
 $router->addRoute('/admin/carts/update', ViewCartAdminController::class, 'update');
 $router->addRoute('/admin/carts/delete', ViewCartAdminController::class, 'delete');
+

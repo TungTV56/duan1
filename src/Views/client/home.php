@@ -66,7 +66,7 @@
                                     <h2><a href="<?= $link ?>"><?= $product['p_name'] ?></a></h2>
 
                                     <div class="product-carousel-price">
-                                        <ins>$<?= $product['p_price'] ?></ins> <del>$100.00</del>
+                                        <ins>$<?= $product['p_price'] ?></ins>
                                     </div>
                                 </form>
                             </div>

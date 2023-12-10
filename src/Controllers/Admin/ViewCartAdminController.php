@@ -4,6 +4,7 @@ namespace Ductong\BaseMvc\Controllers\Admin;
 
 use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\Order;
+use Ductong\BaseMvc\Models\OrderDetail;
 
 class ViewCartAdminController extends Controller
 {
@@ -35,6 +36,12 @@ class ViewCartAdminController extends Controller
         ];
 
         (new Order())->delete($conditions);
+
+        $deleteIDorder = [
+            ['id_order', '=', $_GET['id']],
+        ];
+
+        (new OrderDetail())->delete($deleteIDorder);
 
         header('Location: /admin/carts');
     }

@@ -26,7 +26,7 @@
                     </tr>
                 </thead>
                 <?php
-                if (isset($_SESSION['user'])) {
+                if (isset($_SESSION['user']) && $_SESSION['user']['role'] != 1) {
                     $total_order = 0;
                     $i = 0;
                     foreach ($listOrder as $item) {

@@ -69,6 +69,10 @@ $router->addRoute('/admin/products/create', ProductController::class, 'create');
 $router->addRoute('/admin/products/update', ProductController::class, 'update');
 $router->addRoute('/admin/products/delete', ProductController::class, 'delete');
 
+$router->addRoute('/admin/carts', ViewCartAdminController::class, 'index');
+$router->addRoute('/admin/carts/update', ViewCartAdminController::class, 'update');
+$router->addRoute('/admin/carts/delete', ViewCartAdminController::class, 'delete');
+
 $router->addRoute('/admin/statisticals', StatisticalController::class, 'index');
 
 

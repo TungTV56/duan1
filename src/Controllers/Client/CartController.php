@@ -44,7 +44,7 @@ class  CartController extends Controller
 
         $products = (new Product())->getLatestLimit10();
 
-        $this->render('cart', ['cartPro'=> $_SESSION['cart'], 'products' => $products]);
+        $this->render('cart', ['products' => $products]);
     }
 
     function deleteCart() {
@@ -57,5 +57,25 @@ class  CartController extends Controller
             header('Location: /');
         }
 
+    }
+
+    public function incrementQuantity()
+    {
+        $id = $_GET['id'] ?? '';
+
+        ++$_SESSION['cart'][$id]['quantity'];
+            
+        header('Location: /client/cart');
+    }
+    
+    public function decrementQuantity()
+    {
+        $id = $_GET['id'] ?? '';
+
+        if ($_SESSION['cart'][$id]['quantity'] > 1) {
+            --$_SESSION['cart'][$id]['quantity'];
+        }
+
+        header('Location: /client/cart');
     }
 }

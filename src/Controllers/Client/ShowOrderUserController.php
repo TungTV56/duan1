@@ -25,7 +25,7 @@ class  ShowOrderUserController extends Controller
     }
 
     public function yourOrder() {
-        if(isset($_SESSION['user'])) {
+        if(isset($_SESSION['user']) && $_SESSION['user']['role'] != 1) {
             $listOrder = (new Order())->getAllOrder($_SESSION['user']['id']);
 
             foreach ($listOrder as $order) {

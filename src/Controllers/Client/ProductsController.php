@@ -15,15 +15,23 @@ class ProductsController extends Controller {
 
         // Mảng này có cấu trúc, key là id danh mục, value là tên danh mục
         // Tạo ra mảng này để hiển thị tên danh mục sản phẩm ở danh sách
-        $arrayCategoryIdName = [];
-        foreach ($categories as $category) {
-            $arrayCategoryIdName[$category['id']] = $category['name'];
+        // $arrayCategoryIdName = [];
+        // foreach($categories as $category) {
+        //     $arrayCategoryIdName[$category['id']] = $category['name'];
+        // }
+        if(isset($_POST['btn-submit'])&&($_POST['btn-submit'])){
+            $categoryID= $_POST['iddm'];
+            // $productCate = (new Product())->getAllByCategoryID($categoryID);
+        }else{
+            $categoryID = 0;
         }
-
+        $productCate = (new Product())->getAllByCategoryID($categoryID);
         $this->render("products", 
             [
-                "products" => $products, 
-                "arrayCategoryIdName" => $arrayCategoryIdName
+                "products" => $products,    
+                "categories" => $categories,
+                "productCate" => $productCate 
+                // "arrayCategoryIdName" => $arrayCategoryIdName
             ]
         );
     }

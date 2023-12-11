@@ -135,8 +135,8 @@
                          </div>
                      </div>
 
-                     
-                     <iframe src="/client/comment?idsp=<?= $proDetail['id'] ?>" width="100%" height="500px" frameborder="0"></iframe>
+                     <h2>Bình luận</h2>
+                       <iframe src="/client/comment?idsp=<?= $proDetail['id'] ?>" width="100%" height="500px" frameborder="0"></iframe>
                      <hr>
 
                      <div class="related-products-wrapper" style="width:200px;">

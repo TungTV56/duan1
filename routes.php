@@ -27,10 +27,12 @@ $router->addRoute('/client/home', HomeController::class, 'index');
 $router->addRoute('/client/products', ProductsController::class, 'index');
 $router->addRoute('/client/product-detail', ProDetailController::class, 'index');
 
-//cart
+//comment
 
 $router->addRoute('/client/comment', CommentController::class, 'comment');
-$router->addRoute('/client/comment', CommentController::class, 'get');
+$router->addRoute('/client/comment/create', CommentController::class, 'create');
+
+//cart
 
 $router->addRoute('/client/cart', CartController::class, 'showCart');
 $router->addRoute('/deleteCart', CartController::class, 'deleteCart');

@@ -10,10 +10,24 @@
     </div>
 </div>
 
-
 <div class="single-product-area">
     <div class="zigzag-bottom"></div>
     <div class="container">
+        <div class="filter" style="margin-bottom: 0px;">
+            <form action="/client/products" method="post" style="margin: 30px;">
+                Sorted by:
+                <select class="form-select"  name="iddm">
+                    <option value="0">Tất cả</option>
+                    <?php
+                    foreach ($categories as $category) {
+                        ?>
+                        <option value="<?php echo $category['id']?>"><?php echo $category['name']?></option>
+                    <?php }
+                    ?>
+                </select>
+                <input type="submit" name="btn-submit" value="lọc" style="padding: 2px 5px  ;">
+            </form>
+        </div>
         <div class="row">
             <?php
             foreach ($products as $product) {

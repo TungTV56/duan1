@@ -20,16 +20,9 @@
 </head>
 
 <body>
-    <h2>Bình luận</h2>
-
     <?php
-    foreach ($comment as $comments) {
-        if (isset($_GET['idsp'])) {
-            $idsp = $_GET['idsp'];
-           
-        }
+    foreach ($comment as $comments) {    
     ?>
-
         <div class="username">
             <label for="name">
                 <?= $comments['username'] ?>
@@ -48,12 +41,9 @@
     <?php
     if (isset($_SESSION['user'])) {
     ?>
-
-        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="post">
-            <input type="hidden" name="idsp" value="<?=$idsp?>">
+        <form action="/client/comment/create" method="post">
+            <input type="hidden" name="idsp" value="<?=$_GET['idsp'] ?>">
             <div class="submit-review">
-
-
                 <p><label for="review"></label> <textarea name="content" id="" cols="5" rows="10"></textarea></p>
                 <p><input type="submit" value="Submit" name="btn-submit"></p>
             </div>

@@ -40,9 +40,6 @@ final class Comment extends Model{
         ON c.id_product = p.id 
         WHERE p.id = $idsp";
         $stmt = $this->conn->prepare($sql);
-
-       
-
         $stmt->execute();
 
         $stmt->setFetchMode(\PDO::FETCH_ASSOC);

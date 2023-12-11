@@ -20,14 +20,9 @@
     <?php require_once 'components/css.php' ?>
     <style>
         
-
-        /* CSS CHO PHẦN HEADER */
-        .header {
-            background: aqua;
-            border: 1px solid #000;
-            font-size: 16px;
-            padding: 5px;
-        }
+       .search-box form{
+            padding: 9px;
+       }
 
         .menu {
             background: black;
@@ -78,7 +73,7 @@
         }
 
         .dropdown_content a:hover {
-            background-color: antiquewhite;
+            text-decoration: underline  ;
         }
 
         .dropdown:hover .dropdown_content {

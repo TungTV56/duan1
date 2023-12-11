@@ -108,7 +108,7 @@
                                              <h2>Product Description</h2>
                                              <?= $proDetail['description'] ?>
                                          </div>
-                                         <div role="tabpanel" class="tab-pane fade" id="profile">
+                                         <!-- <div role="tabpanel" class="tab-pane fade" id="profile">
                                              <h2>Reviews</h2>
                                              <div class="submit-review">
                                                  <p><label for="name">Name</label> <input name="name" type="text"></p>
@@ -127,13 +127,17 @@
                                                  <p><label for="review">Your review</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
                                                  <p><input type="submit" value="Submit"></p>
                                              </div>
-                                         </div>
+                                         </div> -->
                                      </div>
                                  </div>
 
                              </div>
                          </div>
                      </div>
+
+                     <h2>Bình luận</h2>
+                       <iframe src="/client/comment?idsp=<?= $proDetail['id'] ?>" width="100%" height="500px" frameborder="0"></iframe>
+                     <hr>
 
                      <div class="related-products-wrapper" style="width:200px;">
                          <h2 class="related-products-title">Sản phẩm cùng loại</h2>

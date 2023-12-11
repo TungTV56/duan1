@@ -10,20 +10,20 @@ class ProductsController extends Controller {
 
     /* Lấy danh sách */
     public function index() {
-        $products = (new Product())->all();
-        $categories = (new Category())->all();
-
-        // Mảng này có cấu trúc, key là id danh mục, value là tên danh mục
-        // Tạo ra mảng này để hiển thị tên danh mục sản phẩm ở danh sách
-        $arrayCategoryIdName = [];
-        foreach ($categories as $category) {
-            $arrayCategoryIdName[$category['id']] = $category['name'];
+        if(isset($_POST['btn-submit'])&&($_POST['btn-submit'])){
+            $iddm = $_POST['iddm'];
         }
-
+        if (isset($iddm)) {
+            $products = (new Product())->getAllsp($iddm);
+        } else {
+            $products = (new Product())->getAllsp(0);
+        }
+        $categories = (new Category())->all();
+        
         $this->render("products", 
             [
-                "products" => $products, 
-                "arrayCategoryIdName" => $arrayCategoryIdName
+                "products" => $products,    
+                "categories" => $categories,
             ]
         );
     }

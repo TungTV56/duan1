@@ -11,6 +11,13 @@ class Controller {
 
         include "Views/client/master.php";
     }
+    protected function renderComment($view, $data = []) {
+        $data['view'] = $view;
+        
+        extract($data);
+
+        include "Views/client/comment.php";
+    }
 
     // Render ra giao diện Admin
     protected function renderAdmin($view, $data = []) {

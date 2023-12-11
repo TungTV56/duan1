@@ -81,4 +81,20 @@ class Product extends Model
 
         return $stmt->fetchAll();
     }
+
+    function getAllsp($iddm=0) {
+        $sql = "SELECT * from products where 1";
+        
+        if($iddm>0){
+            $sql.=" and id_category ='".$iddm."'";
+        }
+
+        $stmt = $this->conn->prepare($sql);
+
+        $stmt->execute();
+
+        $stmt->setFetchMode(\PDO::FETCH_ASSOC);
+
+        return $stmt->fetchAll();
+    }
 }

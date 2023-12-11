@@ -14,11 +14,6 @@
                     <li class="active "><a href="/">Trang chủ</a></li>
                     <li class="dropdown">
                         <a class="dropdownbtn" href="/client/products ">Sản phẩm</a>
-                        <div class="dropdown_content">
-                            <a href="">Đồng hồ</a>
-                            <a href="">Điện thoại</a>
-                            <a href="">Laptop</a>
-                        </div>
                     </li>
                     <li><a href="#">Liên hệ</a></li>
                 </ul>

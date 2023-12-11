@@ -5,6 +5,7 @@ use Ductong\BaseMvc\Controllers\Admin\CategoryController;
 use Ductong\BaseMvc\Controllers\Admin\DashboardController;
 use Ductong\BaseMvc\Controllers\Admin\ProductController;
 use Ductong\BaseMvc\Controllers\Admin\ViewCartAdminController;
+use Ductong\BaseMvc\Controllers\Admin\StatisticalController;
 use Ductong\BaseMvc\Controllers\Client\CartController;
 use Ductong\BaseMvc\Controllers\Client\HomeController;
 use Ductong\BaseMvc\Controllers\Client\LogInController;
@@ -71,6 +72,8 @@ $router->addRoute('/admin/products/delete', ProductController::class, 'delete');
 $router->addRoute('/admin/carts', ViewCartAdminController::class, 'index');
 $router->addRoute('/admin/carts/update', ViewCartAdminController::class, 'update');
 $router->addRoute('/admin/carts/delete', ViewCartAdminController::class, 'delete');
+
+$router->addRoute('/admin/statisticals', StatisticalController::class, 'index');
 
 
 

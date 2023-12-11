@@ -47,15 +47,6 @@
                         <span class="pcoded-mtext">Quản lý Giỏ Hàng</span>
                     </a>
                 </li>
-
-                <li class>
-                    <a href="/admin/comment" class="waves-effect waves-dark">
-                        <span class="pcoded-micon">
-                            <i class="feather icon-layers"></i>
-                        </span>
-                        <span class="pcoded-mtext">Quản lý Bình Luận</span>
-                    </a>
-                </li>
             </ul>
         </div>
     </div>

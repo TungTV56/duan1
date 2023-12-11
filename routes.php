@@ -7,6 +7,7 @@ use Ductong\BaseMvc\Controllers\Admin\CategoryController;
 use Ductong\BaseMvc\Controllers\Admin\DashboardController;
 use Ductong\BaseMvc\Controllers\Admin\ProductController;
 use Ductong\BaseMvc\Controllers\Admin\ViewCartAdminController;
+use Ductong\BaseMvc\Controllers\Admin\StatisticalController;
 use Ductong\BaseMvc\Controllers\Client\CartController;
 use Ductong\BaseMvc\Controllers\Client\HomeController;
 use Ductong\BaseMvc\Controllers\Client\LogInController;
@@ -36,6 +37,10 @@ $router->addRoute('/client/comment/create', CommentController::class, 'create');
 
 $router->addRoute('/client/cart', CartController::class, 'showCart');
 $router->addRoute('/deleteCart', CartController::class, 'deleteCart');
+$router->addRoute('/incrementQuantity', CartController::class, 'incrementQuantity');
+$router->addRoute('/decrementQuantity', CartController::class, 'decrementQuantity');
+
+//order
 $router->addRoute('/client/order', OrderController::class, 'showOrder');
 $router->addRoute('/order', OrderController::class, 'order');
 $router->addRoute('/client/showorder', ShowOrderUserController::class, 'showOrderUser');
@@ -79,4 +84,7 @@ $router->addRoute('/admin/comment/delete', CommentsController::class, 'delete');
 $router->addRoute('/admin/carts', ViewCartAdminController::class, 'index');
 $router->addRoute('/admin/carts/update', ViewCartAdminController::class, 'update');
 $router->addRoute('/admin/carts/delete', ViewCartAdminController::class, 'delete');
+
+$router->addRoute('/admin/statisticals', StatisticalController::class, 'index');
+
 

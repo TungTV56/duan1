@@ -31,6 +31,8 @@ class  LogInController extends Controller
                 header('Location: /admin/dashboard');
                 exit();
             }
+            unset($_SESSION['iddh']);
+            unset($_SESSION['cart']);
 
             header('Location: /');
             exit();

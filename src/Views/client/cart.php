@@ -34,7 +34,7 @@
                                     <?php
                                     $i = 0;
                                     $total_order = 0;
-                                    foreach ($cartPro as $item) {
+                                    foreach ($_SESSION['cart'] as $idsp => $item) {
                                         $total_amount = $item['price'] * $item['quantity'];
                                         $total_order += $total_amount;
                                     ?>
@@ -60,7 +60,9 @@
                                                     <!-- <input type="button" class="minus" value="-"> -->
                                                     <!-- <input type="number" size="4" class="input-text qty text" title="Qty" value="<?= $item['quantity'] ?>" min="0" step="1"> -->
                                                     <!-- <input type="button" class="plus" value="+"> -->
+                                                    <a href="/decrementQuantity?id=<?= $idsp ?>" class="btn btn-danger">-</a>
                                                     <button type="button" class="btn btn-info"><?= $item['quantity'] ?></button>
+                                                    <a href="/incrementQuantity?id=<?= $idsp ?>" class="btn btn-success">+</a>
                                                 </div>
                                             </td>
 

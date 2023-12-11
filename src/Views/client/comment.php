@@ -42,7 +42,7 @@
     if (isset($_SESSION['user'])) {
     ?>
         <form action="/client/comment/create" method="post">
-            <input type="hidden" name="idsp" value="<?=$_GET['idsp'] ?>">
+            <input type="hidden" name="idsp" value="<?= isset($_GET['idsp']) ? $_GET['idsp'] : '' ?>">
             <div class="submit-review">
                 <p><label for="review"></label> <textarea name="content" id="" cols="5" rows="10"></textarea></p>
                 <p><input type="submit" value="Submit" name="btn-submit"></p>

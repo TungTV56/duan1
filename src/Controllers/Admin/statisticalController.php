@@ -6,7 +6,7 @@ use Ductong\BaseMvc\Controller;
 use Ductong\BaseMvc\Models\Category;
 use Ductong\BaseMvc\Models\Product;
 
-class statisticalController extends Controller
+class StatisticalController extends Controller
 {
     public function __construct() {
         check_auth();

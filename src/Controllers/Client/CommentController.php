@@ -40,8 +40,15 @@ class  CommentController extends Controller
                 'date_cmt' => date('Y-m-d', time()),
             ];
             (new Comment)->insert($data);
-            // header('location: /client/comment');
-            $this->renderComment("comment");
+            
+            $product = (new Product())->findOne($idsp);
+            $comment = (new Comment)->getComments($idsp);
+
+            $this->renderComment("comment", [
+                "product" => $product,
+                'comment' => $comment
+            ]);
+
 
         }
     }

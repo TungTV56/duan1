@@ -106,10 +106,10 @@
                                     foreach ($products as $product) {
                                         $link = "/client/product-detail?idsp=" . $product["p_id"];
                                     ?>
-                                        <li class="product">
+                                        <li class="product mt-3">
                                             <a href="<?= $link ?>">
-                                                <img width="325" height="325" alt="T_4_front" class="attachment-shop_catalog wp-post-image" src="<?= $product['p_image'] ?>">
-                                                <h3><?= $product['p_name'] ?></h3>
+                                                <img width="350px" alt="T_4_front" class="attachment-shop_catalog wp-post-image" src="<?= $product['p_image'] ?>">
+                                                <h4><?= $product['p_name'] ?></h4>
                                                 <span class="price"><span class="amount">$ <?= $product['p_price'] ?></span></span>
                                             </a>
                                             <form action="/client/cart" method="post">
@@ -117,7 +117,6 @@
                                                 <input type="hidden" name="name" value="<?= $product['p_name'] ?>">
                                                 <input type="hidden" name="price" value="<?= $product['p_price'] ?>">
                                                 <input type="hidden" name="image" value="<?= $product['p_image'] ?>">
-
                                                 <button type="submit" name="addToCart" style="padding: 5px;">Add to cart</button>
                                             </form>
                                         </li>

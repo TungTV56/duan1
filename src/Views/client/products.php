@@ -33,10 +33,10 @@
             foreach ($products as $product) {
                 $linksp = "/client/product-detail?idsp=" . $product['id'];
             ?>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-md-3 col-sm-6 pt-5" >
                     <div class="single-shop-product">
                         <div class="product-upper">
-                            <img src="<?php echo $product['image']; ?>" alt="">
+                            <img src="<?php echo $product['image']; ?>" alt=""  width="250px">
                         </div>
                         <h2><a href="<?= $linksp ?>"><?= $product['name'] ?></a></h2>
                         <div class="product-carousel-price">
@@ -49,7 +49,7 @@
                                 <input type="hidden" name="name" value="<?= $product['name'] ?>">
                                 <input type="hidden" name="price" value="<?= $product['price'] ?>">
                                 <input type="hidden" name="image" value="<?= $product['image'] ?>">
-                                <button class="add_to_cart_button" type="submit" name="addToCart">Add to cart</button>
+                                <button class=" add_to_cart_button " type="submit" name="addToCart">Add to cart</button>
                             </form>
                         </div>
                     </div>
@@ -57,4 +57,7 @@
             <?php
             }
             ?>
+
         </div>
+    </div>
+</div>
